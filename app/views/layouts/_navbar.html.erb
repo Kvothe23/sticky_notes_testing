@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light" style="background-color: pink;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Sticky Notes</a>
+    <form class="d-flex" action="<%= notes_path %>" method="get">
+      <input class="form-control me-2" type="search" name="query" placeholder="Search notes" aria-label="Search">
+      <button class="btn btn-outline-light" type="submit">Search</button>
+    </form>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+        <%= link_to "My Notes", notes_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Create Note", new_note_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

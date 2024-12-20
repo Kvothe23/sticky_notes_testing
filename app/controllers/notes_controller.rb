@@ -1,6 +1,10 @@
 class NotesController < ApplicationController
   def index
-    @notes = Note.all
+    if params[:query].present?
+      @notes = Note.where("title LIKE ? OR content LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    else
+      @notes = Note.all
+    end
   end
 
   def show
