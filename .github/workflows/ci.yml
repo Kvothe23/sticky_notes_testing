@@ -19,6 +19,9 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Verify Ruby installation
+        run: ruby --version
+
       - name: Fix permissions for bin scripts
         run: chmod +x bin/*
 
@@ -38,6 +41,9 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Verify Ruby installation
+        run: ruby --version
+
       - name: Fix permissions for bin scripts
         run: chmod +x bin/*
 
@@ -56,6 +62,9 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+
+      - name: Verify Ruby installation
+        run: ruby --version
 
       - name: Fix permissions for bin scripts
         run: chmod +x bin/*
@@ -78,6 +87,9 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+
+      - name: Verify Ruby installation
+        run: ruby --version
 
       - name: Fix permissions for bin scripts
         run: chmod +x bin/*
