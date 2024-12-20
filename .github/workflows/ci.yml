@@ -19,14 +19,11 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Verify Ruby installation
-        run: ruby --version
-
-      - name: Fix permissions for bin scripts
-        run: chmod +x bin/*
+      - name: Install dependencies
+        run: bundle install
 
       - name: Scan for common Rails security vulnerabilities using static analysis
-        run: bin/brakeman --no-pager
+        run: bundle exec brakeman --no-pager
 
   scan_js:
     runs-on: ubuntu-latest
