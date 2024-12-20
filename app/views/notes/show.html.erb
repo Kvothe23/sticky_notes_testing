@@ -1,8 +1,13 @@
-<div class="card p-4 shadow">
+<div class="note-container">
+  <div class="show-note">
   <h2><%= @note.title %></h2>
   <p><%= @note.content %></p>
-</div>
+  </div>
 
+<div class="show-buttons">
 <%= link_to "Edit", edit_note_path(@note), class: "btn btn-warning mt-3" %>
 <%= link_to "Back to Notes", notes_path, class: "btn btn-secondary mt-3" %>
-<%= button_to "Delete", note_path(@note), method: :delete, data: { turbo: false, confirm: "Confirm?" }, class: "btn btn-danger" %>
+<%= button_to " ", note_path(@note), method: :delete, data: { turbo: false, confirm: "Confirm?" }, class: "btn btn-danger bi bi-trash" %>
+</div>
+
+</div>
