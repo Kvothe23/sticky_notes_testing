@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'notes/export_all_pdf', to: 'notes#export_all_pdf'
+  get "notes/export_all_pdf", to: "notes#export_all_pdf"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
