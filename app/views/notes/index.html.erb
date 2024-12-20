@@ -1,0 +1,23 @@
+<h1 class="mb-4">STICKY NOTES APPLICATION</h1>
+
+<%= link_to "Create Note", new_note_path, class: "btn btn-primary mb-4" %>
+
+<div class="container mt-6">
+  <div class="row g-3 justify-content-left">
+    <% @notes.each do |note| %>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card sticky-note <%= note_color(note.id) %>">
+          <div class="card-body position-relative">
+            <h5 class="card-title"><%= note.title %></h5>
+            <p class="card-text"><%= truncate(note.content, length: 100) %></p>
+            <div class="card-actions">
+              <%= link_to "", note_path(note), class: "bi bi-aspect-ratio", data: { bs_toggle: "tooltip", bs_placement: "right", title: "See Note" } %>
+              <%= link_to "", edit_note_path(note), class: "bi bi-pencil-square", data: { bs_toggle: "tooltip", bs_placement: "right", title: "Edit Note" } %>
+              <%= link_to "", note_path(note), method: :delete, class: "bi bi-trash", data: { confirm: "Confirm delete?" } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
