@@ -48,6 +48,13 @@ class NotesController < ApplicationController
     redirect_to notes_path
   end
 
+  def export_all_pdf
+    @notes = Note.all
+    render pdf: "all_notes",
+           template: "notes/export_all_pdf",
+           layout: "pdf"
+  end
+
   private
 
   def note_params

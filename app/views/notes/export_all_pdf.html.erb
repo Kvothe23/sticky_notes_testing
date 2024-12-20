@@ -1,0 +1,10 @@
+<h1>My Sticky Notes</h1>
+
+<ol style="margin-top: 50px;">
+  <% @notes.each do |note| %>
+    <li style="margin-bottom: 20px;">
+      <h3><%= note.title %></h3>
+      <p><%= note.content %></p>
+    </li>
+  <% end %>
+</ol>
